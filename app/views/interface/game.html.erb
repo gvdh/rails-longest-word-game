@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div id="grid">
+    <p> Here is your grid ! </p>
+    <%= @grid.join(",").gsub(/,/, " - ") %>
+  </div>
+
+  <form id="contact-form" action="/score">
+      <label for="your-name">What's your longest word ?</label>
+      <input type="text" name="answer" id="your-name" placeholder="Abracadabra" required>
+      <input type="hidden" name="grid" value="<%= @grid %>">
+      <input type="hidden" name="time" value="<%= @start_time %>">
+      <input type="submit" value="Go on!" class="btn btn-primary">
+    </p>
+  </form>
+</div>

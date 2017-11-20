@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div id="grid">
+    <p> Your word => <%= @attempt %> </p>
+    <p> Time Taken to answer: <%= @result[:time].round %> sec</p>
+    <p> Your score: <%= @result[:score].round %></p>
+    <p> <%= @result[:message].capitalize %> </p>
+  </div>
+
+</div>
+
+
+puts "Your word: #{attempt}"
+puts "Time Taken to answer: #{result[:time]}"
+puts "Your score: #{result[:score]}"
+puts "Message: #{result[:message]}"
