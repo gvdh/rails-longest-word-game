@@ -5,6 +5,9 @@
     <p> Time Taken to answer: <%= @result[:time].round %> sec</p>
     <p> Your score: <%= @result[:score].round %></p>
     <p> <%= @result[:message].capitalize %> </p>
+    <p> Your average score => <%= (session[:score].inject{ |sum, el| sum + el }.to_f / session[:score].size).round(1) %> </p>
+    <p> You played <%= session[:number] %> times ! </p>
+    <%= link_to "Replay !", "/game", class: "btn btn-primary" %>
   </div>
 
 </div>

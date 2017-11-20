@@ -18,6 +18,15 @@ class InterfaceController < ApplicationController
       @result = { time: total_time, score: 0, message: message(@attempt, @grid) }
     end
     @result
+    if session[:score]
+      session[:score] << @result[:score]
+    else
+      session[:score] = []
+    end
+    if session[:number]
+      session[:number] += 1
+    else
+      session[:number] = 1
     end
   end
 
@@ -44,5 +53,6 @@ class InterfaceController < ApplicationController
       return false if attempt.count(letter) > @grid.count(letter)
       return false unless @grid.include?(letter)
     end
+  end
 
 end
